@@ -78,7 +78,7 @@ function recursiveUglifyJS(directory, callback) {
         //minify the code
         var code;
         try {
-           code = uglify.minify(source, {fromString: true, mangle: true}).code;
+           code = uglify.minify(source, {fromString: true, mangle: {topLevel: true} }).code;
         } catch (error) {
           return finished(file, error);
         }
